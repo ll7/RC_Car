@@ -166,7 +166,7 @@ class Joystick:
         if raw >= 0:
             return (32768.0 - raw) / 32768.0
         else:
-            return (raw + 32768.0) / (32768.0 - 256.0)
+            return -1.0 * (raw + 32768.0) / (32768.0 - 256.0)
         
     def noScale(self, raw):
         return raw/1.0
