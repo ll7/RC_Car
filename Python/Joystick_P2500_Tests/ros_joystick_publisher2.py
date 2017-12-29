@@ -19,9 +19,10 @@ rate = rospy.Rate(15) # 10hz
 joy = js.Joystick(refreshRate=60)
 
 while not rospy.is_shutdown():
+    # adjusted the value, so it fits to the arduino and rc car
     steering_angle = int((-1.0 * (joy.rightX_P2500() + 1.0) * 90.0 + 180.0)/2.0 + 90.0/2.0)
-    #rospy.loginfo(steering_angle)
     
+    # somehow impossible to go backwards...
     esc_throttle = int((joy.rightY_P2500() + 1.0) * 90.0)    
     rospy.loginfo(esc_throttle)
     
