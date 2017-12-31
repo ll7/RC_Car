@@ -1,9 +1,10 @@
-# RC Car controlled by an Arduino Uno, RaspberryPi 3 and a Ubuntu 16.04 Laptop with ROS Kinetic installed on RPI and Laptop
+# Automation attempt of a 1:10 rc car using ROS Kinetic, Raspberry Pi 3, Arduino Uno and Python. 
 
 ## Hardware
 - Arduino Uno
 - RaspberryPi 3
 - Ubuntu 16.04 LTS Laptop
+  - Saitek P2500 (old joypad)
 
 ## RaspberryPi 3 (RPI) Setup
 Install ubuntu mate for RPI. ROS does not support Raspbian Stretch. Therefore, it is easier to use ubuntu mate for the RPI.
@@ -31,3 +32,13 @@ http://wiki.ros.org/ROS/Tutorials/MultipleMachines
 http://wiki.ros.org/ROS/NetworkSetup
 Don't forget to export the ROS_MASTER_URI in each shell. Check the connection to each device with the terminal command `ping ssh-name`.
 
+## Laptop
+
+### Saitek P2500
+source for the python class: https://github.com/FRC4564/Xbox
+install xboxdrv
+```
+sudo apt-get install xboxdrv
+```
+#### Remarks
+Somehow, not every USB port on my PC works with the xboxdrv package.
